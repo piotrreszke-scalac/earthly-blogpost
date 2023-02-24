@@ -1,0 +1,7 @@
+*.swp
+.terraform
+terraform.tfstate
+.env
+.arg
+.secret
+tfplan

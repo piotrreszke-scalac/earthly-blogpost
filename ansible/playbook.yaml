@@ -1,0 +1,12 @@
+---
+- name: Configure servers
+  hosts: earthly
+  remote_user: ubuntu
+  become: yes
+
+  tasks:
+  - name: Update repositories cache and install packages
+    ansible.builtin.apt:
+      pkg:
+        - nginx
+      update_cache: yes

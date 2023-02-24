@@ -1,0 +1,10 @@
+plugin: aws_ec2
+regions:
+  - eu-central-1
+boto_profile: "{{ lookup('env', 'AWS_PROFILE') | default('aws_profile', true) }}"
+include_filters:
+- tag:Name:
+  - 'earthly'
+keyed_groups:
+  - key: tags.Name
+    separator: ''
